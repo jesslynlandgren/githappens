@@ -1,8 +1,8 @@
-{
-	"extends": ["tslint:recommended", "tslint-react"],
-	"rules": {
-		"indent": [true, "tabs", 2],
-		"interface-name": false,
-		"no-console": false
-	}
-}
+// {
+// 	"extends": ["tslint:recommended", "tslint-react"],
+// 	"rules": {
+// 		"indent": [true, "tabs", 2],
+// 		"interface-name": false,
+// 		"no-console": false
+// 	}
+// }
