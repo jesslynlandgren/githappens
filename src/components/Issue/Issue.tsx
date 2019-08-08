@@ -1,7 +1,10 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 export interface IIssueProps {
 	issue: IIssue;
+	handleClick: (issue: IIssue) => void;
 }
 
 export interface IIssue {
@@ -12,13 +15,17 @@ export interface IIssue {
 const Issue: React.FC<IIssueProps> = (props) => {
 	return (
 
-		<div style="display: flex">
+		<div>
 			<div>
 				{props.issue.title}
 			</div>
 			<div>
-				<i class=""></i>
+				{props.issue.votes}
 			</div>
+			<div  onClick={() => props.handleClick(props.issue)}>
+				<FontAwesomeIcon icon={faThumbsUp}/>
+			</div>
+
 
 		</div>
 	);
