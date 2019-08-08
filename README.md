@@ -1,3 +1,19 @@
+# Git Happens
+
+### MVP:
+* Display searchable list of common git issues, ranked by upvotes
+* View solutions to common git issues
+* Allow users to add new issues with our without a solution
+* Allow users to upvote issues
+* Allow users to reset upvote of issues
+* Display links to other git references
+* Display git cheatsheet
+
+### TODOs: 
+
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
