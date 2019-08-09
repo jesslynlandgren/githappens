@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header/header";
 import Issues from "./components/Issues/Issues";
 import { IIssue } from "./components/Issue/Issue";
 
