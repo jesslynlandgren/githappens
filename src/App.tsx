@@ -1,48 +1,66 @@
+import { Layout, Menu } from "antd";
+import 'antd/dist/antd.css';
 import React from "react";
-import "./App.css";
+import "./App.scss";
+import Breadcrumbs, { IBreadcrumb } from "./components/Breadcrumbs/Breadcrumbs";
 import Issues from "./components/Issues/Issues";
-import { IIssue } from "./components/Issue/Issue";
+import styled from "styled-components";
+const { Header, Content } = Layout;
+
+const StyledAppLayout = styled(Layout)`
+  height: 100%;
+`;
+
+const StyledLogo = styled.div`
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 28px 16px 0;
+  float: left;
+`;
 
 export default class App extends React.Component<any, any> {
+
   constructor(props: {}) {
     super(props);
     this.state = {
-      issues: fakeIssues
+      breadcrumbs: breadcrumbs 
     }
   }
 
   render() {
     return (
-
-      <div><Issues issues={this.state.issues} handleClick={this.handleClick}/></div>
+      <StyledAppLayout id="testApp">
+        <Header>
+        <StyledLogo />
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            defaultSelectedKeys={['1']}
+            style={{ lineHeight: '64px' }}
+            >
+            <Menu.Item key="1">Oh Git!</Menu.Item>
+            <Menu.Item key="2">Cheat Sheet</Menu.Item>
+            <Menu.Item key="3">Playground</Menu.Item>
+            <Menu.Item key="4">References</Menu.Item>
+          </Menu>
+        </Header>
+        <Content style={{ padding: '0 50px' }}>
+          <Breadcrumbs 
+            breadcrumbs={this.state.breadcrumbs}
+          />
+          <Issues />
+        </Content>
+      </StyledAppLayout>
     );
-  }
-
-  handleClick = (issue: IIssue) => {
-    console.log("handling click");
-    const newIssue = {
-      ...issue,
-      votes: issue.votes + 1,
-    }
-    const newIssues = this.state.issues.map((issue: IIssue, index: number) => {
-      if (issue.title === newIssue.title) {
-        return newIssue
-      } else {
-        return issue;
-      }
-    })
-    console.log({newIssues})
-    this.setState({issues: newIssues});
   }
 }
 
-const fakeIssues: IIssue[] = [
+const breadcrumbs: IBreadcrumb[] = [
   {
-    title: "Issue One",
-    votes: 0,
+    title: "Issues"
   },
   {
-    title: "Issue Two",
-    votes: 1,
+    title: "References"
   }
-];
+]

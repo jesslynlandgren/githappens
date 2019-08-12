@@ -1,4 +1,4 @@
-import app from "firebase/app";
+import firebase from "firebase";
 
 const config = {
 	apiKey: "AIzaSyAVyJbV3ieeDBdfo5sQ2th61Mqwyo0h0p0",
@@ -10,10 +10,6 @@ const config = {
 	storageBucket: "",
 };
 
-class Firebase {
-	constructor() {
-		app.initializeApp(config);
-	}
-}
+firebase.initializeApp(config);
 
-export default Firebase;
+export default firebase;

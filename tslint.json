@@ -6,6 +6,8 @@
 	"rules": {
 		"indent": [true, "tabs", 2],
 		"interface-name": false,
+		"jsx-no-lambda": false,
+		"jsx-no-multiline-js": false,
 		"no-console": false
 	}
 }
